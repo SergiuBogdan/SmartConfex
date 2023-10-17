@@ -105,7 +105,6 @@ const Section = styled.section`
     }
   }
   @media (max-width: 1024px) {
-    // height: 45vh;
     width: 100%;
 
     .background {

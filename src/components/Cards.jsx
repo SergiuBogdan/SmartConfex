@@ -132,7 +132,7 @@ const Section = styled.section`
     grid-column-gap: 20px;
     grid-row-gap: 40px;
     overflow-x: hidden;
-    padding: 20px;
+    
     
  
     @media (max-width: 1024px) { 
