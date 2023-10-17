@@ -85,8 +85,9 @@ const Section = styled.section`
 const H1 = styled.h1`
   height: 2vw;
   text-align: center;
-  font-size: 20px;
+  font-size: 55px;
   align-items: center;
+  margin: 3rem auto;
   @media (max-width: 1080px) {
     grid-template-columns: repeat(2, 1fr);
     height: 6vw;

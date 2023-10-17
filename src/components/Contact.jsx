@@ -12,66 +12,73 @@ const Contacts = () => {
       <Navbar />
       <Hero />
       <MainContainer>
-        <FirstContainer>
-          <p>Get in touch with us</p>
-          <div>
-            <AboutDivContainer>
-              <img src={email} />
-              <p>sergiu.bogdan09@yahoo.com</p>
-            </AboutDivContainer>
-            <AboutDivContainer>
-              <img src={phone} />
-              <p>0741339534</p>
-            </AboutDivContainer>
-            <AboutDivContainer>
-              <img src={location} />
-              <p>CLUJ-NAPOCA, STR. MEHEDINTI, NR. 47-49</p>
-            </AboutDivContainer>
-          </div>
-        </FirstContainer>
+        <WrapperContainer>
+          <FirstContainer>
+            <p>Get in touch with us</p>
+            <div>
+              <AboutDivContainer>
+                <IconWrapper>
+                  <img src={email} />
+                </IconWrapper>
+                <p>vladtrifan@smartconfex.ro</p>
+              </AboutDivContainer>
+              <AboutDivContainer>
+                <IconWrapper>
+                  <img src={phone} />
+                </IconWrapper>
+                <p>0758876968</p>
+              </AboutDivContainer>
+              <AboutDivContainer>
+                <IconWrapper>
+                  <img src={location} />
+                </IconWrapper>
+                <p>CLUJ-NAPOCA, STR. MEHEDINTI, NR. 47-49</p>
+              </AboutDivContainer>
+            </div>
+          </FirstContainer>
+          <FormContainer
+            action="https://formsubmit.co/9e4963c4078efc3ca497d5f8a07ce108"
+            method="POST"
+          >
+            <div>
+              <h1>
+                Contact Us <span>Here</span>
+              </h1>
+              <input
+                type="text"
+                name="name"
+                id=""
+                placeholder="Enter name"
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                id=""
+                placeholder="Your email"
+                required
+              />
+              <input
+                type="phone"
+                name="phone"
+                id=""
+                placeholder="Phone number"
+                required
+              />
+              <textarea
+                name="message"
+                id=""
+                cols="30"
+                rows="10"
+                placeholder="Type your message here..."
+                required
+              />
 
-        <SecondContainer
-          action="https://formsubmit.co/9e4963c4078efc3ca497d5f8a07ce108"
-          method="POST"
-        >
-          <div>
-            <h1>
-              Contact Us <span>Here</span>
-            </h1>
-            <input
-              type="text"
-              name="name"
-              id=""
-              placeholder="Enter name"
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              id=""
-              placeholder="Your email"
-              required
-            />
-            <input
-              type="phone"
-              name="phone"
-              id=""
-              placeholder="Phone number"
-              required
-            />
-            <textarea
-              name="message"
-              id=""
-              cols="30"
-              rows="10"
-              placeholder="Type your message here..."
-              required
-            />
-
-            <SubmitButton type="submit">Submit</SubmitButton>
-          </div>
-        </SecondContainer>
-        <ThirdContainer>
+              <SubmitButton type="submit">Submit</SubmitButton>
+            </div>
+          </FormContainer>
+        </WrapperContainer>
+        <GoogleMapsContainer>
           <TitleH1>You can find us here</TitleH1>
           <br></br>
           <iframe
@@ -84,7 +91,7 @@ const Contacts = () => {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
-        </ThirdContainer>
+        </GoogleMapsContainer>
       </MainContainer>
       <Footer />
     </>
@@ -93,14 +100,30 @@ const Contacts = () => {
 
 const MainContainer = styled.div`
   display: flex;
-  justify-content: center;
   padding: 40px;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: stretch;
+  @media (max-width: 1024px) {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-evenly;
+    padding: 20px;
+    flex-direction: column;
+  }
+`;
+
+const WrapperContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10%;
   @media (max-width: 1024px) {
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
     justify-content: space-evenly;
-    padding: 20px;
     flex-direction: column;
   }
 `;
@@ -112,30 +135,37 @@ const FirstContainer = styled.div`
     justify-content: space-between;
     width: 3rem;
   }
+
   @media (max-width: 1024px) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 30px;
-    margin-left: 35px;
+    font-size: 35px;
   }
 `;
 
-const SecondContainer = styled.div`
+const FormContainer = styled.div`
   display: flex;
-  padding: 35px;
   font-family: "Montserrat", sans-serif;
   div {
     display: block;
     background-color: #fff;
+    width: 470px;
+    height: 600px;
     box-shadow: 1px 1px 3px 2px #ddd;
     margin: 0 auto;
-    padding: 20px;
+    padding: 25px;
     border-radius: 15px;
-    @media (max-width: 1024px) {
-      margin: 20px auto;
+  
+    span{
+      color: rgb(29, 185, 237);
+    }
 
-  }
+    @media (max-width: 1024px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 30px;
+      width: 350px;
+      margin-top: 2rem;
+    }
   }
 
   div input,
@@ -151,21 +181,17 @@ const SecondContainer = styled.div`
     @media (max-width: 1024px) {
       width: calc(100% - 16px);
   }
-  div span {
-    color: rgb(29, 185, 237);
-  }
 `;
 
-const ThirdContainer = styled.div`
+const GoogleMapsContainer = styled.div`
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-top: 20px;
-  position: relative;
 
   h2 {
-    font-size: 24px;
+    font-size: 25px;
     margin-bottom: 10px;
   }
 
@@ -180,6 +206,12 @@ const ThirdContainer = styled.div`
     flex-direction: column;
     align-items: center;
     font-size: 20px;
+    iframe {
+      width: 100vw;
+      height: 450px;
+      border: 0;
+      border-radius: 15px;
+    }
   }
 `;
 
@@ -202,16 +234,30 @@ const AboutDivContainer = styled.div`
   display: flex;
   font-size: 15px;
   align-items: center;
-  gap: 10px;
-  margin-top: 10px;
+  gap: 15px;
+  margin-top: 60px;
 `;
 
-const TitleH1 = styled.h2`
+const TitleH1 = styled.h1`
+  font-size: 35px;
+
   @media (max-width: 1024px) {
     display: flex;
     flex-direction: column;
     align-items: center;
     font-size: 20px;
+  }
+`;
+
+const IconWrapper = styled.div`
+  position: relative;
+  img {
+    width: 3rem;
+    transition: transform 0.3s, translate 0.3s;
+  }
+  &:hover img {
+    transform: scale(1.2);
+    translate: 0 -10px;
   }
 `;
 

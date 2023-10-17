@@ -1,10 +1,8 @@
-import { useEffect } from "react";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Cards from "./components/Cards";
 import Services from "./components/Services";
-import scrollreveal from "scrollreveal";
 import Contact from "./components/Contact";
 import Termeni from "./components/Termeni";
 import PrivacyPolicy from "./components/PrivacyPolicy";
@@ -20,28 +18,6 @@ import {
 } from "react-router-dom";
 
 export default function App() {
-  useEffect(() => {
-    const sr = scrollreveal({
-      origin: "top",
-      distance: "30px",
-      duration: 400,
-    });
-    sr.reveal(
-      `
-        nav,
-        #hero,
-        #services,
-        #recommend,
-        #testimonials,
-        footer
-        `,
-      {
-        opacity: 0,
-        interval: 400,
-      }
-    );
-  }, []);
-
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route>

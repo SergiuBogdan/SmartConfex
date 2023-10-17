@@ -6,7 +6,7 @@ import LaserCutting from "../assets/LaserCutting.jpeg";
 import Grinding from "../assets/Grinding.jpeg";
 import WaterjetCutting from "../assets/WaterjetCutting.jpeg";
 import WireEDM from "../assets/WireEDM.jpeg";
-import PlasmaCutting from "../assets/PlasmaCutting.jpeg";
+// import PlasmaCutting from "../assets/PlasmaCutting.jpeg";
 
 export default function Recommend() {
   const data = [
@@ -46,12 +46,12 @@ export default function Recommend() {
       subTitle:
         "In our cutting-edge facility, we specialize in precision engineering, utilizing advanced CNC wire EDM machines with 3 to 5-axis capabilities. Our expertise ensures the creation of top-quality, highly accurate components, delivering superior performance.",
     },
-    {
-      image: PlasmaCutting,
-      title: "Plasma Cutting",
-      subTitle:
-        "Our expertise in plasma cutting ensures that every component we produce meets the most stringent standards of quality and performance. This technology enables efficient, precise cutting of materials, from metals to plastics, with high-speed accuracy and minimal heat-affected zones.",
-    },
+    // {
+    //   image: PlasmaCutting,
+    //   title: "Plasma Cutting",
+    //   subTitle:
+    //     "Our expertise in plasma cutting ensures that every component we produce meets the most stringent standards of quality and performance. This technology enables efficient, precise cutting of materials, from metals to plastics, with high-speed accuracy and minimal heat-affected zones.",
+    // },
   ];
 
   const packages = ["Precision Cutting"];
@@ -77,23 +77,26 @@ export default function Recommend() {
           })}
         </ul>
       </div>
-      <div className="container">
-        {data.map((milling, index) => {
-          return (
-            <div key={index} className="secondContainer">
-              <img src={milling.image} alt="" />
-              <h3>{milling.title}</h3>
-              <p>{milling.subTitle}</p>
-              <div className="info">
-                <h4>{milling.cost}</h4>
+
+      <MainContainer>
+        <div className="container">
+          {data.map((milling, index) => {
+            return (
+              <div key={index} className="secondContainer">
+                <img src={milling.image} alt="mill image" />
+                <H3CardTitle>{milling.title}</H3CardTitle>
+                <CardParagraph>{milling.subTitle}</CardParagraph>
+                <div className="info">
+                  <h4>{milling.cost}</h4>
+                </div>
+                <div className="distance">
+                  <span>{milling.duration}</span>
+                </div>
               </div>
-              <div className="distance">
-                <span>{milling.duration}</span>
-              </div>
-            </div>
-          );
-        })}
-      </div>
+            );
+          })}
+        </div>
+      </MainContainer>
     </Section>
   );
 }
@@ -107,50 +110,61 @@ const Section = styled.section`
     display: flex;
     justify-content: center;
     margin: 2rem 0;
-    ul {
-      display: flex;
-      list-style-type: none;
-      width: max-content;
-      li {
-        padding: 1rem 2rem;
-        border-bottom: 0.1rem solid black;
-      }
-      .active {
-        border-bottom: 0.5rem solid #8338ec;
-      }
+  }
+  ul {
+    display: flex;
+    list-style-type: none;
+    width: max-content;
+    li {
+      padding: 1rem 2rem;
+      border-bottom: 0.1rem solid black;
+    }
+    .active {
+      border-bottom: 0.5rem solid #8338ec;
+    }
     }
   }
+
   .container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 20px;
-    grid-row-gap: 20px;
+    grid-row-gap: 40px;
     overflow-x: hidden;
-
-    @media (max-width: 1024px) {
+    padding: 20px;
+    
+ 
+    @media (max-width: 1024px) { 
       display: grid;
       grid-template-columns: 1fr;
-      grid-template-rows: repeat(6, 1fr);
-      grid-column-gap: 0px;
-      grid-row-gap: 20px;
+      grid-template-rows: repeat(2, 1fr);
+      grid-column-gap: 20px;
+      grid-row-gap: 30px;
+      justify-content: center;
+      padding-top: 20px;
+   
     }
-
+  
     .secondContainer {
-      padding: 1rem;
       display: flex;
+      width: 450px;
       flex-direction: column;
       gap: 0.5rem;
       background-color: #e1e8f2;
       border-radius: 1rem;
+      img {
+        width: 450px;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+      }
+
       transition: 0.3s ease-in-out;
       &:hover {
         transform: translateX(0.4rem) translateY(-1rem);
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
       }
-      img {
-        width: 400px;
-      }
+
       .info {
         display: flex;
         align-items: center;
@@ -171,19 +185,50 @@ const Section = styled.section`
         display: flex;
         justify-content: space-between;
       }
-    }
-    @media (max-width: 1024px) {
-      .secondContainer {
-        flex-direction: row;
+
+
+      @media (max-width: 1024px)  {
+
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        background-color: #e1e8f2;
+        border-radius: 1rem;
+        transition: 0.3s ease-in-out;
+
+      }
+      @media (max-width: 400px)  {
+
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        gap: 0.5rem;
+        background-color: #e1e8f2;
+        border-radius: 1rem;
+        transition: 0.3s ease-in-out;
+        padding: 5px;
       }
     }
-    @media (min-width: 1025px) and (max-width: 1700px) {
+  
+   
+    @media (min-width: 1472px) and (max-width: 1700px) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 50px;
+        grid-row-gap: 50px;
+        padding-left: 50px;      
+    }
+
+    @media (min-width: 1025px) and (max-width: 1471px) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(4, 1fr);
-      grid-column-gap: 20px;
-      grid-row-gap: 20px;
+      grid-template-rows: repeat(3, 1fr);     
+      grid-row-gap: 50px;
+      justify-items: center;
+      padding: 50px;
     }
+
   }
   @media (max-width: 1024px) {
     .packages {
@@ -212,4 +257,32 @@ const Section = styled.section`
       height: 100%;
     }
   }
+`;
+
+const MainContainer = styled.div`
+  max-width: 1500px;
+  margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Montserrat", sans-serif;
+
+  @media (max-width: 1024px) {
+    display: grid;
+    grid-column-gap: 20px;
+    grid-row-gap: 30px;
+    justify-content: center;
+  }
+`;
+
+const CardParagraph = styled.p`
+  font-size: 500;
+  font-size: 17px;
+  line-height: 20px;
+  padding: 25px;
+`;
+
+const H3CardTitle = styled.h3`
+  padding-top: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
 `;
