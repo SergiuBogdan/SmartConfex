@@ -1,7 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
 import logo from "../assets/logo.png";
-
 import { GiHamburgerMenu } from "react-icons/gi";
 import { VscChromeClose } from "react-icons/vsc";
 export default function Navbar() {
@@ -73,6 +72,9 @@ const Nav = styled.nav`
       font-size: 1.2rem;
       font-weight: 900;
       text-transform: uppercase;
+      padding: 2px !important;
+      padding-top: 15px !important;
+      padding-left: 25px !important;
       img {
         height: 90px;
       }

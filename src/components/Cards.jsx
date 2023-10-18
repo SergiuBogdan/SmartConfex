@@ -132,9 +132,8 @@ const Section = styled.section`
     grid-column-gap: 20px;
     grid-row-gap: 40px;
     overflow-x: hidden;
+    padding: 30px;
     
-    
- 
     @media (max-width: 1024px) { 
       display: grid;
       grid-template-columns: 1fr;
@@ -143,7 +142,6 @@ const Section = styled.section`
       grid-row-gap: 30px;
       justify-content: center;
       padding-top: 20px;
-   
     }
   
     .secondContainer {

@@ -87,7 +87,9 @@ const MainContainer = styled.footer`
   background: rgb(2,0,36);
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(54,49,89,1) 0%, rgba(60,116,255,1) 100%);
   border-radius: 0.5rem;
-  padding: 2.5rem;
+  padding-top: 2.5rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 
   .containerLeft {
     color: white;
@@ -167,6 +169,7 @@ const MainContainer = styled.footer`
     width: 100%;
     display: flex;
     flex-direction: column;
+    padding: 30px;
     ul {
       flex-direction: row;
       gap: 3rem;
@@ -184,6 +187,22 @@ const ThirdContainer = styled.div`
   list-style-type: none;
   gap: 2rem;
   color: white;
+  margin-left: -150px;
+
+
+  @media (max-width: 1024px) {
+    list-style-type: none;
+    gap: 2rem;
+    color: white;
+    margin-left: 0;
+  }
+
+  @media screen and (min-width: 1025px) and (max-width: 1270px) {
+    list-style-type: none;
+    gap: 2rem;
+    color: white;
+    margin-left: 110px;
+  }
   li {
     a {
       text-decoration: none;
@@ -227,4 +246,5 @@ li {
 const FirstDiv = styled.div`
   display: block;
   margin: 0 auto;
+  margin-top: 25px;
 `;

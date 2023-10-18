@@ -94,7 +94,6 @@ const Container = styled.div`
 const SecondContainer = styled.div`
   flex: 1;
   margin: 20px;
-
   padding: 30px;
   border-radius: 10px;
   text-align: center;

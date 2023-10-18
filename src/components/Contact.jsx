@@ -100,7 +100,7 @@ const Contacts = () => {
 
 const MainContainer = styled.div`
   display: flex;
-  padding: 40px;
+  padding: 2px;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: stretch;
@@ -119,12 +119,14 @@ const WrapperContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   gap: 10%;
+  padding: 30px;
   @media (max-width: 1024px) {
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
     justify-content: space-evenly;
     flex-direction: column;
+    padding: 0;
   }
 `;
 
@@ -144,6 +146,7 @@ const FirstContainer = styled.div`
 const FormContainer = styled.div`
   display: flex;
   font-family: "Montserrat", sans-serif;
+
   div {
     display: block;
     background-color: #fff;
@@ -153,8 +156,8 @@ const FormContainer = styled.div`
     margin: 0 auto;
     padding: 25px;
     border-radius: 15px;
-  
-    span{
+
+    span {
       color: rgb(29, 185, 237);
     }
 
@@ -177,9 +180,15 @@ const FormContainer = styled.div`
     padding: 8px;
     background-color: #f1f1f1;
     border: 1px solid #ddd;
+    border: none;
     width: calc(100% - 20px);
+    margin-top: 35px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px 2px #ddd;
     @media (max-width: 1024px) {
       width: calc(100% - 16px);
+    }
   }
 `;
 
@@ -220,14 +229,24 @@ const SubmitButton = styled.button`
   color: white;
   border: none;
   border-radius: 0.3rem;
-  padding: 0.7rem 1.5rem;
+  padding: 1rem 1.8rem;
   font-size: 1rem;
   cursor: pointer;
+  margin-left: 9px;
   transition: background-color 0.3s ease-in-out;
+  box-shadow: 1px 1px 3px 2px #ddd;
 
   &:hover {
     background-color: #0056b3;
+    box-shadow: 1px 1px 3px 2px #ddd;
   }
+
+  &:active {
+    transform: translateY(5px);
+    box-shadow: 1px 1px 3px 2px #ddd;
+  }
+
+  transition: transform 0.5s ease-in-out;
 `;
 
 const AboutDivContainer = styled.div`

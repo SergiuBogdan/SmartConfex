@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import homeImage from "../assets/heroBk.png";
+import homeImage from "../assets/heroBk.jpg";
 
 export default function Hero() {
   return (
@@ -27,7 +27,6 @@ const Section = styled.section`
     height: 100%;
     img {
       width: 100%;
-
       border-radius: 15px;
     }
   }
@@ -139,7 +138,5 @@ const Section = styled.section`
         }
       }
     }
-  }
-  @media (min-width: 1025px) and (max-width: 1535px) {
   }
 `;

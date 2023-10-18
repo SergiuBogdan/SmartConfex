@@ -5,7 +5,7 @@ import styled from "styled-components";
 const Copyrights = () => {
   return (
     <Copyright>
-      <p>Copyright &copy; 2023 Sergiu. All rights reserved</p>
+      <p>Copyright &copy; 2023 SmartConfex. All rights reserved</p>
 
       <FirstDiv>
         <div>
